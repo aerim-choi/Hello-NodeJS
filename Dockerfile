@@ -1,6 +1,20 @@
-FROM node:slim
+# Use the official Node.js 14 image
+FROM node:14
+
+# Set the working directory in the container
 WORKDIR /app
-COPY . /app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install dependencies
 RUN npm install
+
+# Copy the application code to the working directory
+COPY . /app
+
+# Expose the port that the application will run on
 EXPOSE 8080
-CMD node index.js
+
+# Command to run the application
+CMD ["node", "index.js"]
