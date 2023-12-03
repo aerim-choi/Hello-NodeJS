@@ -20,11 +20,12 @@ pipeline {
             steps {
                 script {
                     sh 'docker build -t my-node-app .'
+                    sh "docker run -p 80:80 -d --name $CONTAINER_NAME my-node-app"
                 }
 
                 // 'docker run' 명령어를 실행하고 종료 코드 확인
-                def runCommand = "docker run -p 80:80 -d --name $CONTAINER_NAME my-node-app"
-                def resultCode = sh(script: runCommand, returnStatus: true)
+                // def runCommand = "docker run -p 80:80 -d --name $CONTAINER_NAME my-node-app"
+                // def resultCode = sh(script: runCommand, returnStatus: true)
 
                 // // 종료 코드가 0이 아니면 실패로 처리
                 // if (resultCode != 0) {
