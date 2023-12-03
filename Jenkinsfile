@@ -15,7 +15,7 @@ pipeline {
 
         stage('Build and Run Container') {
             when {
-                expression { BRANCH_NAME == 'main' }
+                expression { BRANCH_NAME == 'main' || BRANCH_NAME == 'develop' }
             }
             steps {
                 script {
