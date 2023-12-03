@@ -16,7 +16,7 @@ pipeline {
         stage('Build and Run Container') {
             when {
                 // 브랜치별로 실행 조건을 지정
-                expression { BRANCH_NAME == 'master' }
+                expression { BRANCH_NAME == 'main' }
             }
             steps {
                 script {
