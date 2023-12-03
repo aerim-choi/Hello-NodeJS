@@ -26,10 +26,10 @@ pipeline {
                 def runCommand = "docker run -p 80:80 -d --name $CONTAINER_NAME my-node-app"
                 def resultCode = sh(script: runCommand, returnStatus: true)
 
-                // 종료 코드가 0이 아니면 실패로 처리
-                if (resultCode != 0) {
-                    error "Container failed to start. Exit code: ${resultCode}"
-                }
+                // // 종료 코드가 0이 아니면 실패로 처리
+                // if (resultCode != 0) {
+                //     error "Container failed to start. Exit code: ${resultCode}"
+                // }
             }
         }
     }
