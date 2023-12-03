@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-  console.log(`Example nodejs app listening on port ${port}`)
+  console.log(`Example nodejs app listening on port ${port}~~`)
     // 명시적인 오류 발생
     throw new Error('Intentional error for Jenkins check');
 
